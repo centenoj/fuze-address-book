@@ -1,0 +1,23 @@
+@import '~normalize.css/normalize.css';
+
+*,
+*:before,
+*:after {
+    user-select: none;
+    box-sizing: border-box;
+
+    // avoids a 1px shift at the end of transitions (webkit)
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+html {
+    // This defines what 1rem is
+    font-size: 62.5%; //1rem = 10px
+}
+
+body {
+    box-sizing: border-box;
+    background-color: $color_background;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}

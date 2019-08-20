@@ -1,0 +1,35 @@
+<form (ngSubmit)="onSubmit()" #f="ngForm" class="form">
+
+  <div class="form__row">
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name" ngModel required [disabled]="content && type === 'contact'">
+  </div>
+
+  <div class="form__row" *ngIf="type === 'group'">
+    <label for="description">Description</label>
+    <textarea name="description" id="description" cols="30" rows="10" ngModel></textarea>
+  </div>
+
+  <div class="form__row" *ngIf="type === 'contact'">
+      <label for="phone">Phone</label>
+      <input type="text" id="phone" name="phone" ngModel required>
+  </div>
+
+  <div class="form__row">
+      <label for="pictureUrl">Picture url</label>
+      <input type="text" id="pictureUrl" name="pictureUrl" ngModel>
+  </div>
+
+  <div class="form__row form__row--buttons">
+      <app-button btnType="success" message="{{saveBtnText}}" type="submit" [disabled]="!f.valid"></app-button>
+      <!-- <app-button type="button" message="clear" (clickEvent)="onClear()"></app-button> -->
+      <app-button btnType="cancel" message="cancel" type="button" (clickEvent)="onCancel()"></app-button>
+  </div>
+
+  <div *ngIf="f.touched && !f.valid" class="form__error-container">
+    <p>Please fill the required fields!</p>
+  </div>
+
+</form>
+
+<app-alert *ngIf="showAlert" message="Are you sure you want to save?" type="confirm" (modalEvent)="onModalClick($event)"></app-alert>

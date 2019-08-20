@@ -1,0 +1,9 @@
+<div class="no-contents" *ngIf="content.length == 0">
+  <p>Please add a new {{ type }}!</p>
+</div>
+
+<ul class="grid">
+  <li *ngFor="let item of content">
+      <app-card [content]="item" [type]="type" (deleteEvent)="handleDelete($event)" (editEvent)="handleEdit($event)" (viewEvent)="handleView($event)"></app-card>        
+  </li>
+</ul>

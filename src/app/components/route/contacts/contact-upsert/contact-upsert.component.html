@@ -1,0 +1,7 @@
+<app-title [title]="title"></app-title>
+
+<app-form *ngIf="!isLoading" type="contact" [content]="contact" (submitEvent)="handleSubmit($event)"></app-form>
+
+<app-loading *ngIf="isLoading"></app-loading>
+
+<app-alert *ngIf="alert.show" [message]="alert.message" type="danger" (modalEvent)="onModalClick($event)"></app-alert>

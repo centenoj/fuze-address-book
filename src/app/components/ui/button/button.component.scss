@@ -1,0 +1,56 @@
+@import '../../../../assets/css/settings';
+@import '../../../../assets/css/utilities';
+
+.btn {
+  border: none;
+  padding: 1.5rem 3.2rem;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1.6rem;
+  border-radius: $default_border_radius;
+  outline: none;
+  cursor: pointer;
+
+  @include respond(phone) { 
+    padding: 1rem 2rem;
+  }
+
+  &--primary {
+    background-color: $primary_color;
+    color: $primary_color_text;
+
+    &:hover {
+      background-color: $accent_color;
+      color: $color_black;
+    }
+
+    &:disabled {
+      background-color: $primary_color_light;
+      color: $primary_color_text;
+    }
+  }
+
+  &--success {
+    background-color: $primary_color;
+    color: $primary_color_text;
+
+    &:hover {
+      background-color: $color_success;
+    }
+
+    &:disabled {
+      background-color: $primary_color_light;
+      color: $primary_color_text;
+    }
+  }
+
+  &--cancel {
+    background-color: $primary_color;
+    color: $primary_color_text;
+
+    &:hover {
+      background-color: $color_red;
+    }
+  }
+}

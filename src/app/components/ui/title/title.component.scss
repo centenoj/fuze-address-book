@@ -1,0 +1,18 @@
+@import '../../../../assets/css/settings';
+
+.title-container {
+    display: flex;
+    justify-content: center;
+}
+
+.title {
+    text-align: center;
+
+    &--normal {
+        color: $accent_color;
+    }
+
+    &--danger {
+        color: $color_red;
+    }
+}

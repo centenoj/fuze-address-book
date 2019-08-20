@@ -1,0 +1,22 @@
+@import '../../../../assets/css/utilities';
+
+.button-container {
+    display: flex; 
+    align-items: center;
+    justify-content: flex-end;
+    margin-right: 2rem;
+
+    @include respond(phone) {
+        justify-content: flex-start;
+        margin-right: 0;
+        margin-left: 2rem;
+    }
+
+    & app-button {
+        margin-left: 2rem;
+    }
+}
+
+app-button {
+    -webkit-appearance: none;
+}

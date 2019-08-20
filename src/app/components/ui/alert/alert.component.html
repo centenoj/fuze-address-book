@@ -1,0 +1,11 @@
+<div class="alert" (click)="onDispose($event)">
+  <div class="alert__wrapper">
+    <div class="alert__title-container">
+      <h3 class="alert__title alert__title--{{ type }}">{{ message }}</h3>
+    </div>
+    <div class="alert__action">
+        <app-button *ngIf="type === 'confirm'" btnType="success" [message]="confirmBtnText" type="button" (click)="onConfirm()"></app-button>
+        <app-button btnType="cancel" [message]="cancelBtnText" type="button" (click)="onCancel()"></app-button>
+    </div>
+  </div>
+</div>

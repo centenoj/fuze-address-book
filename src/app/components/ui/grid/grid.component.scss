@@ -1,0 +1,28 @@
+@import '../../../../assets/css/utilities';
+
+.no-contents {
+    font-size: 3rem;
+    display: flex;
+    justify-content: center;
+
+    @include respond(phone) { 
+        font-size: 2.4rem;
+    }
+}
+
+.grid {
+    margin-top: 5rem;
+    padding: 0 10rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(27rem, 32rem));    
+    grid-row-gap: 6rem;
+    grid-column-gap: 3rem;
+    justify-content: center;
+    list-style-type: none;
+
+    @include respond(phone) { 
+        padding: 0 3rem;
+        grid-row-gap: 4rem;
+        grid-column-gap: 2rem;
+    }
+}

@@ -1,0 +1,13 @@
+<app-title title="Groups"></app-title>
+
+<div class="button-container">
+  <app-button btnType="success" message="add" type="button" (clickEvent)="onAdd()"></app-button>
+</div>
+
+<div *ngIf="!isLoading">
+  <app-grid type="group" [content]="groups" (deleteEvent)="handleDelete($event)" (loadingTrigger)="isLoading = true"></app-grid>
+</div>
+
+<app-loading *ngIf="isLoading"></app-loading>
+
+<app-alert *ngIf="alert.show" [message]="alert.message" [type]="alert.type" (modalEvent)="onModalClick($event)"></app-alert>

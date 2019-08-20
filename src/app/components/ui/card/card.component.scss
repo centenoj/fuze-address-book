@@ -1,0 +1,82 @@
+@import '../../../../assets/css/settings';
+
+.card {
+    background-color: $color_background;
+    box-shadow: 0 2rem 5rem rgba($color_black, .1);
+    transition: all .3s;
+    position: relative;
+    display: grid;
+    grid-template-rows: 8rem 1fr 3.5rem;
+    height: 25rem;
+    grid-gap: 1rem;
+
+    &__header {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 0 2rem;
+    }
+
+    &__name {
+        font-size: 2rem;
+        width: 20rem;
+        height: 3rem;
+        color: $primary_text_color;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+
+    &__image {
+        background-color: $primary_color_text;
+        width: 6rem;
+        height: 6rem;
+        border-radius: 50%;
+        box-shadow: 0 2rem 5rem rgba($color_black, .1);
+        margin-right: 2rem;
+    }
+
+    &__body {
+        overflow: hidden;
+        padding: 0 2rem;
+
+        p {
+            font-size: 1.6rem;
+            margin: 0;
+        }
+    }
+
+    &__footer {
+        background-color: $primary_color_light;
+        list-style-type: none;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 0 1rem;
+
+        li {
+            position: relative;
+            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            margin: 0 .6rem;
+
+            &:first-child {
+                margin-right: auto;
+            }
+
+            svg {
+                fill: $primary_color_dark;
+                width: 2.2rem;
+                height: 2.2rem;
+                backface-visibility: hidden;
+                cursor: pointer;
+
+                &:hover {
+                    fill: $accent_color;
+                }
+            }
+        }
+    }
+}

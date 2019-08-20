@@ -1,0 +1,27 @@
+<div class="card">
+  <div class="card__header">
+    <img src="{{ card.pictureUrl }}" alt="card_image" class="card__image">
+    <h2 class="card__name">{{ card.name }}</h2>
+  </div>
+  <div class="card__body">
+    <p>{{ cardBody }}</p>
+  </div>
+  <ul class="card__footer">
+      <li>{{ contactInfo }}</li>
+      <li *ngIf="type === 'group'" (click)="onView()">
+          <svg>
+              <use xlink:href="../../../../assets/images/sprite.svg#icon-user"></use>
+          </svg>
+      </li>
+      <li (click)="onEdit()">
+          <svg>
+              <use xlink:href="../../../../assets/images/sprite.svg#icon-pencil"></use>
+          </svg>
+      </li>
+      <li (click)="onDelete()">
+          <svg>
+              <use xlink:href="../../../../assets/images/sprite.svg#icon-close"></use>
+          </svg>
+      </li> 
+    </ul>
+</div>
