@@ -32,7 +32,12 @@ export class BookClient {
       map(data => data.value),
       catchError(this.handleError)
     ).subscribe((book: AddressBook) => {
-      this._store.updateAddressBook(book);
+      if (!book) {
+        this._router.navigate(['offline']);
+      }
+      else {
+        this._store.updateAddressBook(book);
+      }
     }, (errorMessage) => {
       console.error(errorMessage);
       this._router.navigate(['offline']);
